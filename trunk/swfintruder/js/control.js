@@ -44,7 +44,7 @@ function gotRoot(name){
    if(alertWhenFound)
     alert('gotcha! '+name);
  
-   writeTo("Xss","<b> " +"<a href='"+$("swfurl").value+"?"+par+"="+_selectedAttackPatterns[elNum*1].replace("gotRoot","alert").replace("|NAME|","test").replace(/'/g,'&#39;')+"' target='_blank'><span title='"+_selectedAttackPatterns[elNum*1].replace(/'/g,"&#39;")+"'>" + escapeHtml(name)+"</span>"+"</b></a> <br>");
+   writeTo("Xss","<b> " +"<a href='"+$("swfurl").value+"?"+par+"="+_selectedAttackPatterns[elNum*1].replace("gotRoot","alert").replace("|NAME|","test").replace(/'/g,'&#39;')+"&"+_customValuedParameters+"' target='_blank'><span title='"+_selectedAttackPatterns[elNum*1].replace(/'/g,"&#39;")+"'>" + escapeHtml(name)+"</span>"+"</b></a> <br>");
  }
 }
 
