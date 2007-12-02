@@ -5,7 +5,7 @@
 **  This file is part of SWF Intruder
 **  Author: Stefano Di Paola (stefano.dipaola@mindedsecurity.com)
 **  Copyright: Minded Security © 2007
-**  License: TBD
+**  License: GPL 2.0
 **
 */
 
@@ -82,8 +82,11 @@ static public function _objectToXML  (obj) {
 		_l2 = _l2+("<type_"+type+" name=\""+_l3+"\">"+Testext._toXML(obj[_l3])+"</type_"+type+">");
 	}
 	// Needs this because of FF a Bug for empty objects and Xslt.
+	if(_l2=="<object_content>" && (typeof obj)=="function")
+	  return ("<function>Function</function>");
 	if(_l2=="<object_content>")
 	 return (_l2+"[Empty Object]</object_content>");
+	
 	return (_l2+"</object_content>");
 };
 
@@ -120,7 +123,18 @@ static public function _toXML  (value) {
 		 }
 		return (Testext._objectToXML(value));
 	}else if (_l2 == "function" ) {
-		return ("<function>Function</function>");
+	 // Function could be a prototype, 
+	 // we must treat it as a standard object.
+		if(!Testext._objInArray(value)){
+		 Testext.elStack.push(value);
+		 //trace ("Inserted "+value);
+		}
+		else {
+		 //trace ("Exists "+value);
+		 return "<recursion><![CDATA["+value+"]]></recursion>"
+		 }
+		 return (Testext._objectToXML(value));
+		//return ("<function>Function</function>");
 
 	} else {
 		return ("<value>unkwnown</value>");
