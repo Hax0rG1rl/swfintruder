@@ -1,7 +1,7 @@
 #summary SWFIntruder is the first tool for testing security in Flash movies
 
 = Introduction =
-'''SWFIntruder''' is a tool developed by [http://www.wisec.it Stefano Di Paola] and maintained by  [http://www.owasp.org/index.php/Category:OWASP_Flash_Security_Project OWASP] designed to perform a security analysis of Flash applications.
+'''SWFIntruder''' is a tool developed by [http://www.wisec.it Stefano Di Paola] and maintained by  [http://www.owasp.org/index.php/Category:SWFIntruder OWASP] in  designed to perform a security analysis of Flash applications.
 It helps to find flaws in Flash applications using the methodology originally described by Stefano Di Paola in [http://www.owasp.org/images/8/8c/OWASPAppSec2007Milan_TestingFlashApplications.ppt Testing Flash Applications] (May 2007) and in [http://www.owasp.org/images/d/df/SanJose_AppSec2007_DiPaola.ppt Finding Vulnerabilities in Flash Applications] (Nov 2007).
 
 SWFIntruder was developed using ActionScript, Html and JavaScript resulting in
@@ -11,7 +11,7 @@ get the best capabilities for analysis and interaction with the testing Flash mo
 SWFIntruder was developed by using only open source software.
 Thanks to its generality, SWFIntruder is OS independent.
 
-Visit SWFIntruder [http://www.owasp.org/index.php/Category:OWASP_Flash_Security_Project home page] for more details.
+Visit SWFIntruder [http://www.owasp.org/index.php/Category:SWFIntruder home page] for more details and the [https://www.owasp.org/index.php/Category:OWASP_Flash_Security_Project OWASP Flash Security Project] for a broad overview about Flash security.
 
 == Goals ==
 
