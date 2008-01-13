@@ -343,7 +343,7 @@ function showOkDiv(str){
 **
 */
 function showOnlyFirefoxDiv(str){
-  showInfoDiv("<div style='text-align: center; padding: 5px'><h2>Sorry! SWFIntruder is for Firefox Only</h2>");
+  showInfoDiv("<div style='text-align: center; padding: 5px' onclick='hideInfoDiv()'><h2>Sorry! SWFIntruder is for Firefox 2.0 Only </h2><div style='text-align: center; width: 100%;'><span onclick='hideInfoDiv()' style='cursor: pointer;text-decoration: underline;font-weight: bold;' class='submit'>Close</span></div>");
 }
 
 /*******************
@@ -353,8 +353,10 @@ function showOnlyFirefoxDiv(str){
 function showInfoDiv(str){
  var theOverlay=$("TB_overlay");
  var theOverlayDiv= $("TB_window");
+ try{
  var flashDiv= $("flashcontent");
  flashDiv.style.visibility="hidden";
+ }catch(e){}
  theOverlay.style.display=theOverlayDiv.style.display="block";
  theOverlayDiv.innerHTML=str;
 }
